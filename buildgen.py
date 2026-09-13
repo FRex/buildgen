@@ -22,10 +22,10 @@ lines.append("")
 lines.append('''echo "Building $WINEXE and $LINEXE"''')
 
 lines.append(
-    """zig cc -s -o "$WINEXE" snore.c -O3 -DSNORE_VERSION="\\"$CALVER\\"" -target x86-windows-gnu &"""
+    f"""zig cc -s -o "$WINEXE" {source} -O3 -DSNORE_VERSION="\\"$CALVER\\"" -target x86-windows-gnu &"""
 )
 lines.append(
-    """zig cc -s -o "$LINEXE" snore.c -O3 -DSNORE_VERSION="\\"$CALVER\\"" -target x86-linux-musl &"""
+    f"""zig cc -s -o "$LINEXE" {source} -O3 -DSNORE_VERSION="\\"$CALVER\\"" -target x86-linux-musl &"""
 )
 lines.append("""wait""")
 lines.append("")
