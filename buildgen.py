@@ -43,6 +43,13 @@ if not os.path.isfile("build.sh"):
         print("File build.sh doesn't exist.")
     sys.exit(1)
 
-with open("build.sh", "wb") as f:
-    f.write("\n".join(lines).encode("ASCII"))
-print("Wrote out build.sh")
+with open("build.sh", "rb") as f:
+    oldcontent = f.read()
+
+content = "\n".join(lines).encode("ASCII")
+if content == oldcontent:
+    print("build.sh is already up to date")
+else:
+    with open("build.sh", "wb") as f:
+        f.write(content)
+    print("Wrote out build.sh")
