@@ -46,6 +46,7 @@ if not os.path.isfile("build.sh"):
 with open("build.sh", "rb") as f:
     oldcontent = f.read()
 
+lines.append("")  # empty line at the end o file ends with a newline
 content = "\n".join(lines).encode("ASCII")
 if content == oldcontent:
     print("build.sh is already up to date")
