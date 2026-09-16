@@ -15,8 +15,8 @@ lines.append("")
 
 name = source.split(".")[0]
 
-lines.append(f"""WINEXE="{name}32$""" '''{CALENDAR_VERSION}.exe"''')
-lines.append(f"""LINEXE="{name}32$""" '''{CALENDAR_VERSION}.linux"''')
+lines.append(f"""WINEXE="{name}-32$""" '''{CALENDAR_VERSION}.exe"''')
+lines.append(f"""LINEXE="{name}-32$""" '''{CALENDAR_VERSION}.linux"''')
 
 lines.append("")
 
