@@ -31,7 +31,7 @@ lines.append(
 lines.append("""wait""")
 lines.append("")
 
-lines.append("""if [ "$1" == "install" ]; then""")
+lines.append("""if [ "$1" = "install" ]; then""")
 lines.append('''    echo "installing"''')
 lines.append(f"""    cp "$WINEXE" /g/mybin/{name}.exe""")
 lines.append("""fi""")
